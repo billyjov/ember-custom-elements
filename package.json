@@ -1,6 +1,6 @@
 {
-  "name": "ember-custom-elements",
-  "version": "2.1.0-1",
+  "name": "ember-custom-elements-patch",
+  "version": "1.0.0",
   "description": "Easily use custom elements to invoke your Ember components, routes, and applications.",
   "keywords": [
     "ember-addon",
@@ -10,7 +10,7 @@
     "web components",
     "custom elements"
   ],
-  "repository": "https://github.com/Ravenstine/ember-custom-elements",
+  "repository": "https://github.com/billyjov/ember-custom-elements",
   "license": "MIT",
   "author": "Ten Bitcomb",
   "directories": {
