@@ -1,11 +1,15 @@
 [![Build Status](https://travis-ci.com/Ravenstine/ember-custom-elements.svg?branch=master)](https://travis-ci.com/Ravenstine/ember-custom-elements)
 [![npm version](https://badge.fury.io/js/ember-custom-elements.svg)](https://badge.fury.io/js/ember-custom-elements)
 
-Ember Custom Elements
-=====================
+Ember Custom Elements Patch
+===========================
 
 The most flexible way to render parts of your Ember application using custom elements!
 
+-------------
+##  ⚠️ THIS IS A MODIFIED VERSION OF EMBER CUSTOM ELEMENTS 
+##  ⚠️ PLEASE TAKE A LOOK [HERE](https://github.com/Ravenstine/ember-custom-elements) FOR THE ORIGINAL VERSION
+-----
 
 ## Demos
 
