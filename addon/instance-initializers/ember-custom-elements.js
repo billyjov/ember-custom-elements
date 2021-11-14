@@ -75,8 +75,10 @@ function determineIfShouldEvalModule(instance, _module) {
         // Test if a function named "customElement" is called within the module
         if (DECORATOR_REGEX.test(code)) return true;
       }
-      const dep = instance.__registry__.fallback.resolver._moduleRegistry._entries[moduleName];
-      if (dep && _moduleShouldEval(dep)) return true;
+
+      // TODO: resolve deps.
+      // const dep = instance.__registry__.fallback.resolver._moduleRegistry._entries[moduleName];
+      // if (dep && _moduleShouldEval(dep)) return true;
     }
     return false;
   }
