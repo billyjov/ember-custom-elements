@@ -7,7 +7,7 @@ Ember Custom Elements Patch
 The most flexible way to render parts of your Ember application using custom elements!
 
 -------------
-##  ⚠️ THIS IS A MODIFIED VERSION OF EMBER CUSTOM ELEMENTS 
+##  ⚠️ THIS IS A MODIFIED VERSION OF EMBER CUSTOM ELEMENTS. USE THIS ON YOUR OWN RISK.
 ##  ⚠️ PLEASE TAKE A LOOK [HERE](https://github.com/Ravenstine/ember-custom-elements) FOR THE ORIGINAL VERSION
 -----
 
