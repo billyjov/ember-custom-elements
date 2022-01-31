@@ -70,7 +70,7 @@ function determineIfShouldEvalModule(instance, _module) {
   function _moduleShouldEval(_module) {
     for (const moduleName of _module.deps) {
       // Check if ember-custom-elements is a dependency of the module
-      if (moduleName === 'ember-custom-elements') {
+      if (moduleName === 'ember-custom-elements-patch') {
         const code = (_module.callback || function() {}).toString();
         // Test if a function named "customElement" is called within the module
         if (DECORATOR_REGEX.test(code)) return true;

@@ -1,7 +1,7 @@
 /* eslint-disable ember/require-tagless-components */
 /* eslint-disable ember/no-classic-components */
 /* eslint-disable no-unused-vars */
-import Ember, { registerDestructor } from 'ember-custom-elements/lib/ember-compat';
+import Ember, { registerDestructor } from 'ember-custom-elements-patch/lib/ember-compat';
 import { module, test, } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { set } from '@ember/object';
@@ -19,18 +19,18 @@ import {
   setupApplicationForTest,
   setupNativeElementForTest,
   setupTestRouter
-} from '../helpers/ember-custom-elements';
+} from '../helpers/ember-custom-elements-patch';
 import { hbs } from 'ember-cli-htmlbars';
 import EmberComponent from '@ember/component';
 import GlimmerComponent from '@glimmer/component';
 import DummyApplication from 'dummy/app';
 import Route from '@ember/routing/route';
-import { customElement, forwarded, getCustomElement } from 'ember-custom-elements';
+import { customElement, forwarded, getCustomElement } from 'ember-custom-elements-patch';
 import { tracked } from '@glimmer/tracking';
 import Service, { inject as service } from '@ember/service';
 import { getOwner } from '@ember/application';
 
-module('Integration | Component | ember-custom-elements', function (hooks) {
+module('Integration | Component | ember-custom-elements-patch', function (hooks) {
   setupRenderingTest(hooks);
 
   const components = [

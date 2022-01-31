@@ -2,7 +2,7 @@ import { notifyPropertyChange, set } from '@ember/object';
 import { schedule, scheduleOnce } from '@ember/runloop';
 import { getOwner, setOwner } from '@ember/application';
 import { camelize } from '@ember/string';
-import { getInitializationPromise } from '../instance-initializers/ember-custom-elements';
+import { getInitializationPromise } from '../instance-initializers/ember-custom-elements-patch';
 import { compileTemplate } from './template-compiler';
 import OutletElement, { getPreserveOutletContent, OUTLET_VIEWS } from './outlet-element';
 import BlockContent from './block-content';

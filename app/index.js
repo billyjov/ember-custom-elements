@@ -4,4 +4,4 @@ export {
   setupCustomElementFor,
   EmberOutletElement,
   EmberCustomElement
-} from 'ember-custom-elements';
+} from 'ember-custom-elements-patch';

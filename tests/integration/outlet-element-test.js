@@ -7,9 +7,9 @@ import { find,
          settled
 } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
-import { customElement, EmberOutletElement } from 'ember-custom-elements';
+import { customElement, EmberOutletElement } from 'ember-custom-elements-patch';
 import Route from '@ember/routing/route';
-import { setupRouteTest, setupTestRouter, setupNativeElementForTest } from '../helpers/ember-custom-elements';
+import { setupRouteTest, setupTestRouter, setupNativeElementForTest } from '../helpers/ember-custom-elements-patch';
 
 @customElement('outlet-element')
 class OutletElement extends EmberOutletElement {}

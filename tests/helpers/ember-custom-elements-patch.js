@@ -1,8 +1,8 @@
 /* eslint-disable ember/no-private-routing-service */
 /* eslint-disable ember/new-module-imports */
-import Ember from 'ember-custom-elements/lib/ember-compat';
+import Ember from 'ember-custom-elements-patch/lib/ember-compat';
 import Router from '@ember/routing/router';
-import { setupCustomElementFor } from 'ember-custom-elements';
+import { setupCustomElementFor } from 'ember-custom-elements-patch';
 
 export function setupComponentForTest(owner, componentClass, template, registrationName) {
   owner.register(`component:${registrationName}`, componentClass);

@@ -5,7 +5,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import { find, findAll, render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import Component from '@ember/component';
-import { compileTemplate } from 'ember-custom-elements/lib/template-compiler';
+import { compileTemplate } from 'ember-custom-elements-patch/lib/template-compiler';
 
 module('Unit | Utility | template-compiler', function (hooks) {
   setupRenderingTest(hooks);
