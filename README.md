@@ -1,6 +1,3 @@
-[![Build Status](https://travis-ci.com/Ravenstine/ember-custom-elements.svg?branch=master)](https://travis-ci.com/Ravenstine/ember-custom-elements)
-[![npm version](https://badge.fury.io/js/ember-custom-elements.svg)](https://badge.fury.io/js/ember-custom-elements)
-
 Ember Custom Elements Patch
 ===========================
 
@@ -8,7 +5,7 @@ The most flexible way to render parts of your Ember application using custom ele
 
 -------------
 ##  ⚠️ THIS IS A MODIFIED VERSION OF EMBER CUSTOM ELEMENTS. USE THIS ON YOUR OWN RISK.
-##  ⚠️ PLEASE TAKE A LOOK [HERE](https://github.com/Ravenstine/ember-custom-elements) FOR THE ORIGINAL VERSION
+##  ⚠️ PLEASE TAKE A LOOK [HERE](https://github.com/Ravenstine/ember-custom-elements-patch) FOR THE ORIGINAL VERSION
 -----
 
 ## Demos
@@ -54,7 +51,7 @@ This add-on won't work at all with versions of `ember-source` prior to `3.6.0`. 
 ## Installation
 
 ```
-ember install ember-custom-elements
+ember install ember-custom-elements-patch
 ```
 
 If you are targeting older browsers, you may want to use a [polyfill for custom elements](https://github.com/webcomponents/polyfills/tree/master/packages/custom-elements).  Other features of web components are also available as [polyfills](https://github.com/webcomponents/polyfills).
@@ -70,7 +67,7 @@ All you have to do is use the `customElement` decorator in your component file:
 
 ```javascript
 import Component from '@glimmer/component';
-import { customElement } from 'ember-custom-elements';
+import { customElement } from 'ember-custom-elements-patch';
 
 @customElement('my-component')
 export default MyComponent extends Component {
@@ -154,7 +151,7 @@ Just like with components, you can use it directly on your route class:
 /* app/routes/posts.js */
 
 import Route from '@ember/routing/route';
-import { customElement } from 'ember-custom-elements';
+import { customElement } from 'ember-custom-elements-patch';
 
 @customElement('test-route')
 export default class PostsRoute extends Route {
@@ -177,7 +174,7 @@ If your route renders to [named outlets](https://api.emberjs.com/ember/release/c
 /* app/routes/posts.js */
 
 import Route from '@ember/routing/route';
-import { customElement } from 'ember-custom-elements';
+import { customElement } from 'ember-custom-elements-patch';
 
 @customElement('test-route')
 @customElement('test-route-sidebar', { outletName: 'sidebar' })
@@ -217,7 +214,7 @@ The outlet element will not be defined by default.  You must do this with the `@
 // app/custom-elements.js
 
 import { setOwner } from '@ember/application';
-import { customElement, EmberOutletElement } from 'ember-custom-elements';
+import { customElement, EmberOutletElement } from 'ember-custom-elements-patch';
 
 @customElement('ember-outlet')
 export default class OutletElement extends EmberOutletElement {
@@ -265,7 +262,7 @@ import Application from '@ember/application';
 import Resolver from 'ember-resolver';
 import loadInitializers from 'ember-load-initializers';
 import config from './config/environment';
-import { customElement } from 'ember-custom-elements';
+import { customElement } from 'ember-custom-elements-patch';
 
 @customElement('ember-app')
 export default class App extends Application {
@@ -289,7 +286,7 @@ The `customElement` decorator can also be used on native custom elements (i.e. e
 
 ```javascript
 /* app/custom-elements/my-element.js */
-import { customElement } from 'ember-custom-elements';
+import { customElement } from 'ember-custom-elements-patch';
 
 @customElement('my-element')
 export default class MyElement extends HTMLElement {
@@ -313,8 +310,8 @@ At present, there are a few options you can pass when creating custom elements:
 
 - **extends**: A string representing the name of a native element your custom element should extend from.  This is the same thing as the `extends` option passed to [window.customElements.define()](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#High-level_view).
 - **useShadowRoot**: By default, application content rendered in your custom elements will be placed directly into the main DOM.  If you set this option to `true`, a shadow root will be used.
-- **observedAttributes**: A whitelist of which element attributes to observe.  This sets the native `observedAttributes` static property on [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements).  It's suggested that you only use this option if you know what you are doing, as once the `observedAttributes` are set on a defined custom element, it cannot be changed after the fact(remember that custom elements can be only defined once).  The most common reason to define `observedAttributes` would be for performance reasons, as making calls to JavaScript every time any attribute changes is more expensive than if only some attribute changes should call JavaScript.  All that said, you probably don't need this, as ember-custom-elements observes all attribute changes by default.  Does nothing for custom elements that instantiate Ember apps.
-- **customElementClass**: In the extreme edge case that you need to redefine the behavior of the custom element class itself, you can `import { EmberCustomElement } from 'ember-custom-elements';`, extend it into a subclass, and pass that subclass to the `customElementClass` option.  This is definitely an expert tool and, even if you think you need this, you probably don't need it.  This is made available only for the desperate.  The `EmberCustomElement` class should be considered a private entity.
+- **observedAttributes**: A whitelist of which element attributes to observe.  This sets the native `observedAttributes` static property on [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements).  It's suggested that you only use this option if you know what you are doing, as once the `observedAttributes` are set on a defined custom element, it cannot be changed after the fact(remember that custom elements can be only defined once).  The most common reason to define `observedAttributes` would be for performance reasons, as making calls to JavaScript every time any attribute changes is more expensive than if only some attribute changes should call JavaScript.  All that said, you probably don't need this, as ember-custom-elements-patch observes all attribute changes by default.  Does nothing for custom elements that instantiate Ember apps.
+- **customElementClass**: In the extreme edge case that you need to redefine the behavior of the custom element class itself, you can `import { EmberCustomElement } from 'ember-custom-elements-patch';`, extend it into a subclass, and pass that subclass to the `customElementClass` option.  This is definitely an expert tool and, even if you think you need this, you probably don't need it.  This is made available only for the desperate.  The `EmberCustomElement` class should be considered a private entity.
 - **camelizeArgs**: Element attributes must be kabob-case, but if `camelizeArgs` is set to true, these attributes will be exposed to your components in camelCase.
 - **outletName**: (routes only) The name of an outlet you wish to render for a route.  Defaults to 'main'.  The section on [named outlets][#named-outlets] goes into further detail.
 - **preserveOutletContent**: (routes only) When set to `true`, this prevents the DOM content inside the element from being cleared when transition away from the route is performed.  This is `false` by default, but you may want to set this to `true` in the case where you need to keep the DOM content around for animation purposes.
@@ -362,7 +359,7 @@ Simply pass the context of a component; if the component was invoked with a cust
 
 ```javascript
 import Component from '@glimmer/component';
-import { customElement, getCustomElement } from 'ember-custom-elements';
+import { customElement, getCustomElement } from 'ember-custom-elements-patch';
 
 @customElement('foo-bar')
 export default class FooBar extends Component {
@@ -383,7 +380,7 @@ If you need to share state between your component and the outside world, you can
 
 ```javascript
 import Component from '@glimmer/component';
-import { customElement, forwarded } from 'ember-custom-elements';
+import { customElement, forwarded } from 'ember-custom-elements-patch';
 
 @customElement('foo-bar')
 export default class FooBar extends Component {
